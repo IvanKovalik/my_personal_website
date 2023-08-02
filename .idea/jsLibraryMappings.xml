@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{app-164f6dde, app-7bd53f54, app-8d89d13e, vendor-fdabe717}" />
+    <file url="file://$PROJECT_DIR$" libraries="{analytics, app-164f6dde, app-7bd53f54, app-8d89d13e, vendor-fdabe717}" />
   </component>
 </project>
