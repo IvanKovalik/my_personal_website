@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
 
 
@@ -19,3 +20,7 @@ class ArticlesPageView(TemplateView):
 
 class ContactPageView(TemplateView):
     template_name = 'contact_page.html'
+
+
+class CreateArticlePage(TemplateView):
+    template_name = 'create_article.html'
