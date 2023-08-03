@@ -25,6 +25,9 @@ urlpatterns = [
     path('projects/', ProjectsPageView.as_view(), name='projects-page'),
     path('articles/', ArticlesPageView.as_view(), name='articles-page'),
     path('contact/', ContactPageView.as_view(), name='contact-page'),
+
     path('articles/create_article/', CreateArticlePage.as_view(), name='create-article-page'),
+
+    # path('articles/<tag:slug>', )
 
 ]
