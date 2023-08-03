@@ -7,9 +7,8 @@
     <link href="/img/favicon-297x297.png" rel="apple-touch-icon-precomposed">
     <meta content="/img/favicon-297x297.png" name="msapplication-TileImage">
     <title>
-        Articles |
-        Seb Kay
-
+        Статьи |
+        Ковалик Иван
     </title>
     <meta name="description" content="My thoughts on web development and a look at my personal life.">
     <meta name="google-site-verification" content="bzTP6T7_iPqdsTPB1KIMbC5z7GXwvXKbcedNpY">
@@ -33,115 +32,96 @@
 </head>
 <body>
 <div class="wrap">
-    <header class="header">
-    <div class="header__section header__section--media">
-        <a class="logo" href="{% url 'index-page' %}">
-            <picture>
-                <source type="image/webp" srcset="/img/seb-avatar-2021.webp 1x, /img/seb-avatar-2021-@2x.webp 2x">
-                <source type="image/jpeg" srcset="/img/seb-avatar-2021.jpg 1x, /img/seb-avatar-2021-@2x.jpg 2x">
-                <img src="/img/seb-avatar-2021.jpg" alt="Headshot of Seb Kay" width="100" height="100">
-            </picture>
-            <span class="logo__text">
-                Seb Kay
-            </span>
-        </a>
-    </div>
-    <div class="header__section header__section--menu">
-        <a class="logo" href="{% url 'index-page' %}">
-            <span class="logo__text">
-            Seb Kay
-            </span>
-        </a>
-        <nav class="menu">
-            <a class="menu__item " href="{% url 'work-page' %}">
-                Work
-            </a>
-            <a class="menu__item " href="{% url 'projects-page' %}">
-                Projects
-            </a>
-            <a class="menu__item " href="{% url 'articles-page' %}">
-                Articles
-            </a>
-            <a class="menu__item " href="{% url 'contact-page' %}">
-                Contact
-            </a>
-        </nav>
-    </div>
-</header>
+
+    {% include 'components/header.html' %}
+
     <section>
         <div class="grid grid--tb2-12">
             <div class="grid__column grid__column--4">
                 <div class="mb-tiny">
                     <p class="subheading">
-                        Search
+                        Поиск
                     </p>
                 </div>
                 <div class="mb-medium">
                     <form class="search-form" action="https://sebkay.com/articles">
                         <input class="search-form__field" type="text" name="s"
-                               placeholder="PHP, WordPress, Freelancing..." enterkeyhint="search" value="">
+                               placeholder="Python, Django, additional libraries.." enterkeyhint="search" value="">
                         <button class="search-form__action">
-                            Search
+                            Поиск
                         </button>
                     </form>
                 </div>
                 <div class="mb-tiny">
                     <p class="subheading">
-                        Filter By
+                        Фильтр:
                     </p>
                 </div>
                 <ul class="link-list">
-                    <li class="link-list__item ">
-                        <a class="tag" href="https://sebkay.com/articles/category/freelancing">
-                            Freelancing
+
+                    {% for tag in tags %}
+                        <li class="link-list__item ">
+                        <a class="tag" href="{% url 'index-page' %}">
+                            {{ tag }}
                         </a>
                     </li>
-                    <li class="link-list__item ">
-                        <a class="tag" href="https://sebkay.com/articles/category/copywriting">
-                            Copywriting
-                        </a>
-                    </li>
-                    <li class="link-list__item ">
-                        <a class="tag" href="https://sebkay.com/articles/category/side-projects">
-                            Side Projects
-                        </a>
-                    </li>
-                    <li class="link-list__item ">
-                        <a class="tag" href="https://sebkay.com/articles/category/wordpress"
-                           style="border-color: #0073AA; color: #0073AA;">
-                            WordPress
-                        </a>
-                    </li>
-                    <li class="link-list__item ">
-                        <a class="tag" href="https://sebkay.com/articles/category/tips">
-                            Tips
-                        </a>
-                    </li>
-                    <li class="link-list__item ">
-                        <a class="tag" href="https://sebkay.com/articles/category/advice">
-                            Advice
-                        </a>
-                    </li>
-                    <li class="link-list__item ">
-                        <a class="tag" href="https://sebkay.com/articles/category/assorted">
-                            Assorted
-                        </a>
-                    </li>
-                    <li class="link-list__item ">
-                        <a class="tag" href="https://sebkay.com/articles/category/laravel"
-                           style="border-color: #F9322C; color: #F9322C;">
-                            Laravel
-                        </a>
-                    </li>
+                    {% endfor %}
+{##}
+{#                    <li class="link-list__item ">#}
+{#                        <a class="tag" href="https://sebkay.com/articles/category/freelancing">#}
+{#                            Freelancing#}
+{#                        </a>#}
+{#                    </li>#}
+{##}
+{##}
+{#                    <li class="link-list__item ">#}
+{#                        <a class="tag" href="https://sebkay.com/articles/category/copywriting">#}
+{#                            Copywriting#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="link-list__item ">#}
+{#                        <a class="tag" href="https://sebkay.com/articles/category/side-projects">#}
+{#                            Side Projects#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="link-list__item ">#}
+{#                        <a class="tag" href="https://sebkay.com/articles/category/wordpress"#}
+{#                           style="border-color: #0073AA; color: #0073AA;">#}
+{#                            WordPress#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="link-list__item ">#}
+{#                        <a class="tag" href="https://sebkay.com/articles/category/tips">#}
+{#                            Tips#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="link-list__item ">#}
+{#                        <a class="tag" href="https://sebkay.com/articles/category/advice">#}
+{#                            Advice#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="link-list__item ">#}
+{#                        <a class="tag" href="https://sebkay.com/articles/category/assorted">#}
+{#                            Assorted#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="link-list__item ">#}
+{#                        <a class="tag" href="https://sebkay.com/articles/category/laravel"#}
+{#                           style="border-color: #F9322C; color: #F9322C;">#}
+{#                            Laravel#}
+{#                        </a>#}
+{#                    </li>#}
                 </ul>
             </div>
             <div class="grid__column grid__column--8">
                 <div class="mb-large">
                     <h1 class="mb-tiny">
-                        Articles
+                        Статьи
                     </h1>
                     <p class="txt-large">
-                        My thoughts on web development and a look at my personal life.
+                        Мои мысли о разработке и технологиях
+                        <br>
+                        (иногда публикую на другие платформы)
                     </p>
                 </div>
                 <article class="post-preview">
@@ -757,16 +737,9 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
-        <div class="footer__inner">
-            <p class="footer__text">
-                © 2023 Seb Kay.
-            </p>
-            <p class="footer__text">
-                Built with <a class="highlight-laravel" href="https://laravel.com/" target="_blank">Laravel</a>.
-            </p>
-        </div>
-    </footer>
+
+    {% include 'components/footer.html' %}
+
 </div>
 
 <script defer="" src="https://www.googletagmanager.com/gtag/js?id=UA-31577987-1"></script>

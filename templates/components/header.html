@@ -1,35 +1,37 @@
+{% block content %}
 <header class="header">
     <div class="header__section header__section--media">
-        <a class="logo" href="{% url 'index-page' %}">
+        <a class="logo" href="https://sebkay.com">
             <picture>
                 <source type="image/webp" srcset="/img/seb-avatar-2021.webp 1x, /img/seb-avatar-2021-@2x.webp 2x">
                 <source type="image/jpeg" srcset="/img/seb-avatar-2021.jpg 1x, /img/seb-avatar-2021-@2x.jpg 2x">
                 <img src="/img/seb-avatar-2021.jpg" alt="Headshot of Seb Kay" width="100" height="100">
             </picture>
             <span class="logo__text">
-                Seb Kay
-            </span>
+                    Ковалик Иван
+                </span>
         </a>
     </div>
     <div class="header__section header__section--menu">
         <a class="logo" href="{% url 'index-page' %}">
-            <span class="logo__text">
-            Seb Kay
-            </span>
+                <span class="logo__text">
+                Ковалик Иван
+                </span>
         </a>
         <nav class="menu">
             <a class="menu__item " href="{% url 'work-page' %}">
-                Work
+                Работа
             </a>
             <a class="menu__item " href="{% url 'projects-page' %}">
-                Projects
+                Проекты
             </a>
             <a class="menu__item " href="{% url 'articles-page' %}">
-                Articles
+                Статьи
             </a>
             <a class="menu__item " href="{% url 'contact-page' %}">
-                Contact
+                Контакты
             </a>
         </nav>
     </div>
 </header>
+{% endblock %}
