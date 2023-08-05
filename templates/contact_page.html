@@ -1,39 +1,43 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <link href="/img/favicon-32x32.png" rel="icon" sizes="32x32">
-    <link href="/img/favicon-192x192.png" rel="icon" sizes="192x192">
-    <link href="/img/favicon-297x297.png" rel="apple-touch-icon-precomposed">
-    <meta content="/img/favicon-297x297.png" name="msapplication-TileImage">
-    <title>
-        Контакты
-        | Ковалик Иван
-    </title>
-    <meta name="description" content="">
-    <meta name="google-site-verification" content="bzTP6T7_iPqdsTPB1KIMbC5z7GXwvXKbcedNpY">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@sebkaydesign">
-    <meta name="twitter:title" content="Seb Kay">
-    <meta name="twitter:description"
-          content="A web developer from Southampton, UK. Specialising in Laravel, WordPress, JavaScript and Vue.js.">
-    <meta name="twitter:image"
-          content="https://res.cloudinary.com/sebkay/image/upload/v1651768884/seb-kay-twitter-card_cvco9q.jpg">
-    <link rel="preload" as="style" href="https://sebkay.com/build/assets/app-164f6dde.css">
-    <link rel="modulepreload" href="https://sebkay.com/build/assets/app-7bd53f54.js">
-    <link rel="modulepreload" href="https://sebkay.com/build/assets/vendor-fdabe717.js">
-    <link rel="modulepreload" href="https://sebkay.com/build/assets/app-8d89d13e.js">
-    <link rel="stylesheet" href="https://sebkay.com/build/assets/app-164f6dde.css">
-    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-    <script type="text/javascript" async=""
-            src="https://www.googletagmanager.com/gtag/js?id=G-KJSS1DK4GH&amp;l=dataLayer&amp;cx=c"></script>
-    <script type="text/javascript" async=""
-            src="https://www.gstatic.com/recaptcha/releases/pCoGBhjs9s8EhFOHJFe8cqis/recaptcha__en.js"
-            crossorigin="anonymous"
-            integrity="sha384-ER8TR/9ygDDx6eY4PVNpeuj19NsI16UfPHQbL+Y1qWVn5fYv9C/Ki3MmObCWDrbd"></script>
-    <script type="module" src="https://sebkay.com/build/assets/app-7bd53f54.js"></script>
-    <script type="module" src="https://sebkay.com/build/assets/app-8d89d13e.js"></script>
-</head>
+
+{% include 'components/head.html' %}
+
+{#<head>#}
+{#    <meta charset="utf-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">#}
+{#    <link href="/img/favicon-32x32.png" rel="icon" sizes="32x32">#}
+{#    <link href="/img/favicon-192x192.png" rel="icon" sizes="192x192">#}
+{#    <link href="/img/favicon-297x297.png" rel="apple-touch-icon-precomposed">#}
+{#    <meta content="/img/favicon-297x297.png" name="msapplication-TileImage">#}
+{#    <title>#}
+{#        Контакты#}
+{#        | Ковалик Иван#}
+{#    </title>#}
+{#    <meta name="description" content="">#}
+{#    <meta name="google-site-verification" content="bzTP6T7_iPqdsTPB1KIMbC5z7GXwvXKbcedNpY">#}
+{#    <meta name="twitter:card" content="summary_large_image">#}
+{#    <meta name="twitter:site" content="@sebkaydesign">#}
+{#    <meta name="twitter:title" content="Seb Kay">#}
+{#    <meta name="twitter:description"#}
+{#          content="A web developer from Southampton, UK. Specialising in Laravel, WordPress, JavaScript and Vue.js.">#}
+{#    <meta name="twitter:image"#}
+{#          content="https://res.cloudinary.com/sebkay/image/upload/v1651768884/seb-kay-twitter-card_cvco9q.jpg">#}
+{#    <link rel="preload" as="style" href="https://sebkay.com/build/assets/app-164f6dde.css">#}
+{#    <link rel="modulepreload" href="https://sebkay.com/build/assets/app-7bd53f54.js">#}
+{#    <link rel="modulepreload" href="https://sebkay.com/build/assets/vendor-fdabe717.js">#}
+{#    <link rel="modulepreload" href="https://sebkay.com/build/assets/app-8d89d13e.js">#}
+{#    <link rel="stylesheet" href="https://sebkay.com/build/assets/app-164f6dde.css">#}
+{#    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>#}
+{#    <script type="text/javascript" async=""#}
+{#            src="https://www.googletagmanager.com/gtag/js?id=G-KJSS1DK4GH&amp;l=dataLayer&amp;cx=c"></script>#}
+{#    <script type="text/javascript" async=""#}
+{#            src="https://www.gstatic.com/recaptcha/releases/pCoGBhjs9s8EhFOHJFe8cqis/recaptcha__en.js"#}
+{#            crossorigin="anonymous"#}
+{#            integrity="sha384-ER8TR/9ygDDx6eY4PVNpeuj19NsI16UfPHQbL+Y1qWVn5fYv9C/Ki3MmObCWDrbd"></script>#}
+{#    <script type="module" src="https://sebkay.com/build/assets/app-7bd53f54.js"></script>#}
+{#    <script type="module" src="https://sebkay.com/build/assets/app-8d89d13e.js"></script>#}
+{#</head>#}
+
 <body>
 <div class="wrap">
 
@@ -107,34 +111,34 @@
 
 </div>
 
-<script defer="" src="https://www.googletagmanager.com/gtag/js?id=UA-31577987-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
+{#<script defer="" src="https://www.googletagmanager.com/gtag/js?id=UA-31577987-1"></script>#}
+{#<script>#}
+{#    window.dataLayer = window.dataLayer || [];#}
+{##}
+{#    function gtag() {#}
+{#        dataLayer.push(arguments);#}
+{#    }#}
+{##}
+{#    gtag('js', new Date());#}
+{##}
+{#    gtag('config', 'UA-31577987-1');#}
+{#</script>#}
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
 
-    gtag('js', new Date());
-
-    gtag('config', 'UA-31577987-1');
-</script>
-
-
-<div>
-    <div class="grecaptcha-badge" data-style="bottomright"
-         style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;">
-        <div class="grecaptcha-logo">
-            <iframe title="reCAPTCHA"
-                    src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Lf1dBAcAAAAAKvLKqjx_-vitdVgOvEviQgGLhXe&amp;co=aHR0cHM6Ly9zZWJrYXkuY29tOjQ0Mw..&amp;hl=en&amp;v=pCoGBhjs9s8EhFOHJFe8cqis&amp;size=invisible&amp;cb=i5zs9vvcsb6u"
-                    role="presentation" name="a-6hylz7wtniaf" scrolling="no"
-                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
-                    width="256" height="60" frameborder="0"></iframe>
-        </div>
-        <div class="grecaptcha-error"></div>
-        <textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response"
-                  style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
-    </div>
-    <iframe style="display: none;"></iframe>
-</div>
+{#<div>#}
+{#    <div class="grecaptcha-badge" data-style="bottomright"#}
+{#         style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;">#}
+{#        <div class="grecaptcha-logo">#}
+{#            <iframe title="reCAPTCHA"#}
+{#                    src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Lf1dBAcAAAAAKvLKqjx_-vitdVgOvEviQgGLhXe&amp;co=aHR0cHM6Ly9zZWJrYXkuY29tOjQ0Mw..&amp;hl=en&amp;v=pCoGBhjs9s8EhFOHJFe8cqis&amp;size=invisible&amp;cb=i5zs9vvcsb6u"#}
+{#                    role="presentation" name="a-6hylz7wtniaf" scrolling="no"#}
+{#                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"#}
+{#                    width="256" height="60" frameborder="0"></iframe>#}
+{#        </div>#}
+{#        <div class="grecaptcha-error"></div>#}
+{#        <textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response"#}
+{#                  style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>#}
+{#    </div>#}
+{#    <iframe style="display: none;"></iframe>#}
+{#</div>#}
 </body>
