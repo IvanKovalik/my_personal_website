@@ -54,7 +54,7 @@
                 </p>
                 <div class="post-preview__excerpt">
                     <p>
-                        {{ article.text }}
+                        {{ article.text | truncatewords:'35' }}
                     </p>
                 </div>
                 <p class="post-preview__action">

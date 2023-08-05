@@ -13,11 +13,17 @@ class Article(models.Model):
         return self.name
 
 
+def get_upload_path():
+    path = f'../static/images/project_images'
+    return path
+
+
 class Project(models.Model):
-    preview_image = models.ImageField('Preview image')
+    preview_image = models.ImageField('Preview image', upload_to=get_upload_path())
     name = models.CharField(max_length=100)
-    description = models.CharField(max_length=1000)
-    techs = models.CharField(max_length=100)
+    description = models.TextField(max_length=500)
+    text = models.TextField(max_length=10000)
+    what_have_been_done_by_me = models.CharField(max_length=100)
 
     tags = TaggableManager()
 
@@ -28,8 +34,9 @@ class Project(models.Model):
 class WorkProject(models.Model):
     preview_image = models.ImageField('Preview image')
     name = models.CharField(max_length=100)
-    description = models.CharField(max_length=1000)
-    techs = models.CharField(max_length=100)
+    description = models.TextField(max_length=500)
+    text = models.TextField(max_length=10000)
+    what_have_been_done_by_me = models.CharField(max_length=100)
     has_recommend_letter = models.BooleanField(default=False)
 
     tags = TaggableManager()
