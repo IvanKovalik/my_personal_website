@@ -61,8 +61,8 @@
 
                     {% for tag in tags %}
                         <li class="link-list__item ">
-                            <a class="tag" href="{% url 'index-page' %}">
-                                {{ tag }}
+                            <a class="tag" href="{% url 'index-page' %}" style="border-color: #2db416; color: #38c420;">
+                                {{ tag.tag_name }}
                             </a>
                         </li>
                     {% endfor %}
@@ -89,9 +89,9 @@
                             </a>
                         </h3>
                         <p class="post-preview__meta">
-                            <a class="tag" href="https://sebkay.com/articles/{{ article.tag }}/"
+                            <a class="tag" href="https://sebkay.com/articles/{{ article.tag.name }}/"
                                style="border-color: #38c420; color: #32d218;">
-                                {{ article.tag }}
+                                {{ article.tag.name }}
                             </a>
                             <br>
                             {{ article.date_created }}

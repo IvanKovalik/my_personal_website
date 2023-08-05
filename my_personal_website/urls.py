@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import IndexPageView, ArticlesPageView, ProjectsPageView, ContactPageView, WorkPageView, CreateArticlePage
+from .views import IndexPageView, ArticlesPageView, ProjectsPageView, ContactPageView, WorkPageView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,8 +25,6 @@ urlpatterns = [
     path('projects/', ProjectsPageView.as_view(), name='projects-page'),
     path('articles/', ArticlesPageView.as_view(), name='articles-page'),
     path('contact/', ContactPageView.as_view(), name='contact-page'),
-
-    path('articles/create_article/', CreateArticlePage.as_view(), name='create-article-page'),
 
     # path('articles/<tag:slug>', )
 

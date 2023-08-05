@@ -58,90 +58,44 @@
                 Мои последние статьи:
             </h2>
         </div>
-        <article class="post-preview">
-            <h3 class="post-preview__title">
-                <a href="https://sebkay.com/articles/converting-a-laravel-inertia-app-from-mix-to-vite">
-                    Converting a Laravel Inertia App from Mix to Vite
-                </a>
-            </h3>
-            <p class="post-preview__meta">
-                <a class="tag" href="https://sebkay.com/articles/category/laravel"
-                   style="border-color: #F9322C; color: #F9322C;">
-                    Laravel
-                </a>
-                <br>
-                02 September 2022
-                /
-                4 minute read
-            </p>
-            <div class="post-preview__excerpt">
-                <p>
-                    I recently converted my Inertia app from Laravel Mix to using Vite. In this post I'll talk about how
-                    it went, as well as some of the gotchas.
+
+        {% for article in articles %}
+
+            <article class="post-preview">
+                <h3 class="post-preview__title">
+                    <a href="https://sebkay.com/articles/converting-a-laravel-inertia-app-from-mix-to-vite">
+                        {{ article.name }}
+                    </a>
+                </h3>
+                <p class="post-preview__meta">
+
+                    {% for tag in tags %}
+                        <a class="tag" href="https://sebkay.com/articles/category/laravel"
+                           style="border-color: #2db416; color: #38c420;">
+                            {{ article.tag.name }}
+                        </a>
+                    {% endfor %}
+
+                    <br>
+                    {{ article.date_created }}
+                    /
+                    4 minute read
                 </p>
-            </div>
-            <p class="post-preview__action">
-                <a href="https://sebkay.com/articles/converting-a-laravel-inertia-app-from-mix-to-vite">
-                    Read Article →
-                </a>
-            </p>
-        </article>
-        <article class="post-preview">
-            <h3 class="post-preview__title">
-                <a href="https://sebkay.com/articles/using-ziggy-with-laravel-inertia-and-vite">
-                    Using Ziggy with Laravel, Inertia (Vue) and Vite
-                </a>
-            </h3>
-            <p class="post-preview__meta">
-                <a class="tag" href="https://sebkay.com/articles/category/laravel"
-                   style="border-color: #F9322C; color: #F9322C;">
-                    Laravel
-                </a>
-                <br>
-                08 July 2022
-                /
-                2 minute read
-            </p>
-            <div class="post-preview__excerpt">
-                <p>
-                    I recently converted one of my apps from Laravel Mix (Webpack) to Vite.
-                    Unfortunately there was a big stumbling block when it came to getting Ziggy working.
-                    In this post I discuss how I found a solution.
+                <div class="post-preview__excerpt">
+                    <p>
+                        {{ article.text }}
+                    </p>
+                </div>
+                <p class="post-preview__action">
+                    <a href="https://sebkay.com/articles/converting-a-laravel-inertia-app-from-mix-to-vite">
+                        Читать статью →
+                    </a>
                 </p>
-            </div>
-            <p class="post-preview__action">
-                <a href="https://sebkay.com/articles/using-ziggy-with-laravel-inertia-and-vite">
-                    Read Article →
-                </a>
-            </p>
-        </article>
-        <article class="post-preview">
-            <h3 class="post-preview__title">
-                <a href="https://sebkay.com/articles/multi-image-uploader-laravel-javascript-tailwind">
-                    Multi-Image Uploader with Laravel, JavaScript &amp; Tailwind
-                </a>
-            </h3>
-            <p class="post-preview__meta">
-                <a class="tag" href="https://sebkay.com/articles/category/laravel"
-                   style="border-color: #F9322C; color: #F9322C;">
-                    Laravel
-                </a>
-                <br>
-                02 May 2022
-                /
-                7 minute read
-            </p>
-            <div class="post-preview__excerpt">
-                <p>
-                    A step-by-step guide on creating a multi-image uploader using Laravel, JavaScript &amp; Tailwind.
-                </p>
-            </div>
-            <p class="post-preview__action">
-                <a href="https://sebkay.com/articles/multi-image-uploader-laravel-javascript-tailwind">
-                    Read Article →
-                </a>
-            </p>
-        </article>
+            </article>
+
+        {% endfor %}
+
+
     </section>
     {% include 'components/footer.html' %}
 </div>
