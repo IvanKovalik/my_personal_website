@@ -18,9 +18,8 @@
                 Разрабатываю на Python, Django, DRF, люблю работать с библиотекой Selenium.
             </p>
             <p>
-                I'm on <a href="" target="_blank">GitHub</a>, <a
-                    href="" target="_blank">Twitter</a> and <a
-                    href="" target="_blank">Instagram</a>.
+                I'm on <a href="" target="_blank">GitHub</a>,
+                <a href="" target="_blank">Twitter</a>
             </p>
         </div>
     </section>
@@ -41,10 +40,10 @@
                 </h3>
                 <p class="post-preview__meta">
 
-                    {% for tag in tags %}
+                    {% for tag in article.tags.all %}
                         <a class="tag" href="https://sebkay.com/articles/category/laravel"
                            style="border-color: #2db416; color: #38c420;">
-                            {{ article.tag.name }}
+                            {{ tag }}
                         </a>
                     {% endfor %}
 
@@ -64,9 +63,7 @@
                     </a>
                 </p>
             </article>
-
         {% endfor %}
-
 
     </section>
     {% include 'components/footer.html' %}

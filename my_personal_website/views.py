@@ -1,8 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
+from taggit.models import Tag
 
-from .models import Tag, Article, Project
+from .models import Article, Project
 
 
 class IndexPageView(TemplateView):

@@ -18,6 +18,7 @@
     <section class="page-wide">
 
         {% for project in projects %}
+
             <div class="project-preview">
                 <figure class="project-preview__media">
                     <a href="https://sebkay.com/projects/harlist">
@@ -29,9 +30,15 @@
                 <div class="project-preview__content">
                     <h2 class="project-preview__title">
                         <a href="https://sebkay.com/projects/harlist">
-                            Harlist
+                            {{ project.name }}
                         </a>
                     </h2>
+                    {% for tag in project.tags.all %}
+                        <a class="tag" href="{% url 'index-page' %}"
+                           style="border-color: #2db416; color: #38c420; margin-bottom: 15px;">
+                            {{ tag }}
+                        </a>
+                    {% endfor %}
                     <p class="project-preview__desc">
                         To do app with a focus on simplicity. Only the features you need to get things done.
                     </p>
@@ -52,6 +59,7 @@
                     </div>
                 </div>
             </div>
+
         {% endfor %}
 
         <div class="project-preview">
@@ -68,6 +76,12 @@
                         Inspirational Pixels
                     </a>
                 </h2>
+                {% for tag in tags.all %}
+                    <a class="tag" href="{% url 'index-page' %}"
+                       style="border-color: #2db416; color: #38c420; margin-bottom: 15px;">
+                        {{ tag }}
+                    </a>
+                {% endfor %}
                 <p class="project-preview__desc">
                     Web design blog focused on helping beginners via tutorials, videos, code snippets and freebies.
                 </p>

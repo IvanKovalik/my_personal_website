@@ -1,5 +1,11 @@
-from .models import Article, Tag
+from .models import Article, Project, WorkProject
 from django.contrib import admin
 
-admin.site.register(Article)
-admin.site.register(Tag)
+# admin.site.register(Tag)
+admin.site.register(Project)
+admin.site.register(WorkProject)
+
+
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ['name', 'text']
