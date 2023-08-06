@@ -21,14 +21,14 @@
 
             <div class="project-preview">
                 <figure class="project-preview__media">
-                    <a href="https://sebkay.com/projects/{{ project.name }}">
+                    <a href="/projects/{{ project.name }}">
                         <img src="https://res.cloud52/v1676549597/app.harlist.io_p5fgqc.png"
                              alt="Screenshot of Harlist">
                     </a>
                 </figure>
                 <div class="project-preview__content">
                     <h2 class="project-preview__title">
-                        <a href="https://sebkay.com/projects/harlist">
+                        <a href="/projects/{{ project.name }}">
                             {{ project.name }}
                         </a>
                     </h2>
@@ -49,7 +49,7 @@
                         </ul>
                     </div>
                     <div class="project-preview__action">
-                        <a href="https://sebkay.com/projects/harlist" class="btn">
+                        <a href="/projects/{{ project.name }}" class="btn">
                             Смотреть проект
                         </a>
                     </div>
@@ -58,67 +58,9 @@
 
         {% endfor %}
 
-        <div class="project-preview">
-            <figure class="project-preview__media">
-                <a href="https://sebkay.com/projects/inspirational-pixels">
-                    <img src="https://res.cloudinary.com/sebkay/image/upload/v1643827425/inspirationalpixels.com_aw325y.webp"
-                         srcset="https://res.cloudinary.com/sebkay/image/upload/v1643827425/inspirationalpixels.com_aw325y.webp 1x, https://res.cloudinary.com/sebkay/image/upload/v1643827424/inspirationalpixels.com-_2x_p1gzdk.webp 2x"
-                         alt="Screenshot of Inspirational Pixels">
-                </a>
-            </figure>
-            <div class="project-preview__content">
-                <h2 class="project-preview__title">
-                    <a href="https://sebkay.com/projects/inspirational-pixels">
-                        Inspirational Pixels
-                    </a>
-                </h2>
-                {% for tag in tags.all %}
-                    <a class="tag" href="{% url 'index-page' %}"
-                       style="border-color: #2db416; color: #38c420; margin-bottom: 15px;">
-                        {{ tag }}
-                    </a>
-                {% endfor %}
-                <p class="project-preview__desc">
-                    Web design blog focused on helping beginners via tutorials, videos, code snippets and freebies.
-                </p>
-                <div class="project-preview__meta">
-                    <ul class="list list--regular">
-                        <li class="list__item">
-                            Logo Design
-                        </li>
-                        <li class="list__item">
-                            Web Design
-                        </li>
-                        <li class="list__item">
-                            WordPress Development
-                        </li>
-                    </ul>
-                </div>
-                <div class="project-preview__action">
-                    <a href="https://sebkay.com/projects/inspirational-pixels" class="btn">
-                        View Details
-                    </a>
-                </div>
-            </div>
-        </div>
     </section>
 
     {% include 'components/footer.html' %}
 
 </div>
-
-<script defer="" src="https://www.googletagmanager.com/gtag/js?id=UA-31577987-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'UA-31577987-1');
-</script>
-
-
 </body>

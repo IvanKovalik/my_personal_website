@@ -8,12 +8,6 @@
 
     {% include 'components/header.html' %}
 
-    {#    <script>#}
-    {#        window.recaptchaSiteKey = "6Lf1dBAcAAAAAKvLKqjx_-vitdVgOvEviQgGLhXe";#}
-    {#    </script>#}
-    {#    <script defer=""#}
-    {#            src="https://www.google.com/recaptcha/api.js?render=6Lf1dBAcAAAAAKvLKqjx_-vitdVgOvEviQgGLhXe"></script>#}
-    {#    <section class="page">#}
     <div class="wysiwyg">
         <h1>
             Связь со мной
@@ -23,86 +17,55 @@
             пожалуйста, заполните форму ниже. Я отвечу Вам, как только увижу Ваше сообщение.
         </p>
     </div>
-    <div class="mt-large">
-        <form id="contact-form" class="form" action="" method="post"
-              data-recaptcha-form="contact">
-            <div class="form__row">
-                <div class="form__field">
-                    <label for="name" class="form__label">
-                        Имя <span class="form__required">*</span>
-                    </label>
-                    <input id="name" name="name" type="text" required="">
-                </div>
-                <div class="form__field">
-                    <label for="email" class="form__label">
-                        Email <span class="form__required">*</span>
-                    </label>
-                    <input id="email" name="email" type="email" required="">
-                </div>
-            </div>
-            <div class="form__row">
-                <div class="form__field">
-                    <label for="subject" class="form__label">
-                        Тема <span class="form__required">*</span>
-                    </label>
-                    <input id="subject" name="subject" type="text" required="">
-                </div>
-            </div>
-            <div class="form__row">
-                <div class="form__field">
-                    <label for="message" class="form__label">
-                        Сообщение <span class="form__required">*</span>
-                    </label>
-                    <textarea id="message" name="message" required=""></textarea>
-                </div>
-            </div>
-            <div class="form__row">
-                <div class="form__field">
-                    <div class="hidden">
-                        <input name="subject_2" type="text">
+    <section>
+        <div class="mt-large">
+            <form id="contact-form" class="form" action="" method="post"
+                  data-recaptcha-form="contact">
+                <div class="form__row">
+                    <div class="form__field">
+                        <label for="name" class="form__label">
+                            Имя <span class="form__required">*</span>
+                        </label>
+                        <input id="name" name="name" type="text" required="">
                     </div>
-                    <button class="btn">
-                        Отправить сообщение
-                    </button>
+                    <div class="form__field">
+                        <label for="email" class="form__label">
+                            Email <span class="form__required">*</span>
+                        </label>
+                        <input id="email" name="email" type="email" required="">
+                    </div>
                 </div>
-            </div>
-            {#            <input type="hidden" name="_token" value="iFT5iVgCjGMdvmHxgdQf6g0RRGSaaDvqXGDGnpc1">#}
-        </form>
-    </div>
+                <div class="form__row">
+                    <div class="form__field">
+                        <label for="subject" class="form__label">
+                            Тема <span class="form__required">*</span>
+                        </label>
+                        <input id="subject" name="subject" type="text" required="">
+                    </div>
+                </div>
+                <div class="form__row">
+                    <div class="form__field">
+                        <label for="message" class="form__label">
+                            Сообщение <span class="form__required">*</span>
+                        </label>
+                        <textarea id="message" name="message" required=""></textarea>
+                    </div>
+                </div>
+                <div class="form__row">
+                    <div class="form__field">
+                        <div class="hidden">
+                            <input name="subject_2" type="text">
+                        </div>
+                        <button class="btn">
+                            Отправить сообщение
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </section>
 
     {% include 'components/footer.html' %}
 
 </div>
-
-{#<script defer="" src="https://www.googletagmanager.com/gtag/js?id=UA-31577987-1"></script>#}
-{#<script>#}
-{#    window.dataLayer = window.dataLayer || [];#}
-{##}
-{#    function gtag() {#}
-{#        dataLayer.push(arguments);#}
-{#    }#}
-{##}
-{#    gtag('js', new Date());#}
-{##}
-{#    gtag('config', 'UA-31577987-1');#}
-{#</script>#}
-
-
-{#<div>#}
-{#    <div class="grecaptcha-badge" data-style="bottomright"#}
-{#         style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;">#}
-{#        <div class="grecaptcha-logo">#}
-{#            <iframe title="reCAPTCHA"#}
-{#                    src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Lf1dBAcAAAAAKvLKqjx_-vitdVgOvEviQgGLhXe&amp;co=aHR0cHM6Ly9zZWJrYXkuY29tOjQ0Mw..&amp;hl=en&amp;v=pCoGBhjs9s8EhFOHJFe8cqis&amp;size=invisible&amp;cb=i5zs9vvcsb6u"#}
-{#                    role="presentation" name="a-6hylz7wtniaf" scrolling="no"#}
-{#                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"#}
-{#                    width="256" height="60" frameborder="0"></iframe>#}
-{#        </div>#}
-{#        <div class="grecaptcha-error"></div>#}
-{#        <textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response"#}
-{#                  style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>#}
-{#    </div>#}
-{#    <iframe style="display: none;"></iframe>#}
-{#</div>#}
 </body>

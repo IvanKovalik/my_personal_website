@@ -26,6 +26,6 @@ urlpatterns = [
     path('articles/', ArticlesPageView.as_view(), name='articles-page'),
     path('contact/', ContactPageView.as_view(), name='contact-page'),
 
-    re_path('r"(?P<pk>[0-9]+)/"', ListOfArticlesView.as_view(), name='articles-by-tag-page'),
+    # path('articles/<str:tag>', ListOfArticlesView.as_view(), name='articles-by-tag-page'),
 
 ]

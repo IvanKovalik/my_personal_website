@@ -45,7 +45,5 @@ class ContactPageView(TemplateView):
     template_name = 'contact_page.html'
 
 
-class ListOfArticlesView(ListView):
-
-    def get_queryset(self, **kwargs):
-        return Article.objects.filter(tags=kwargs['pk'])
+class ArticlesByTagView(TemplateView):
+    pass
