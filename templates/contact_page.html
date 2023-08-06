@@ -2,109 +2,73 @@
 
 {% include 'components/head.html' %}
 
-{#<head>#}
-{#    <meta charset="utf-8">#}
-{#    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">#}
-{#    <link href="/img/favicon-32x32.png" rel="icon" sizes="32x32">#}
-{#    <link href="/img/favicon-192x192.png" rel="icon" sizes="192x192">#}
-{#    <link href="/img/favicon-297x297.png" rel="apple-touch-icon-precomposed">#}
-{#    <meta content="/img/favicon-297x297.png" name="msapplication-TileImage">#}
-{#    <title>#}
-{#        Контакты#}
-{#        | Ковалик Иван#}
-{#    </title>#}
-{#    <meta name="description" content="">#}
-{#    <meta name="google-site-verification" content="bzTP6T7_iPqdsTPB1KIMbC5z7GXwvXKbcedNpY">#}
-{#    <meta name="twitter:card" content="summary_large_image">#}
-{#    <meta name="twitter:site" content="@sebkaydesign">#}
-{#    <meta name="twitter:title" content="Seb Kay">#}
-{#    <meta name="twitter:description"#}
-{#          content="A web developer from Southampton, UK. Specialising in Laravel, WordPress, JavaScript and Vue.js.">#}
-{#    <meta name="twitter:image"#}
-{#          content="https://res.cloudinary.com/sebkay/image/upload/v1651768884/seb-kay-twitter-card_cvco9q.jpg">#}
-{#    <link rel="preload" as="style" href="https://sebkay.com/build/assets/app-164f6dde.css">#}
-{#    <link rel="modulepreload" href="https://sebkay.com/build/assets/app-7bd53f54.js">#}
-{#    <link rel="modulepreload" href="https://sebkay.com/build/assets/vendor-fdabe717.js">#}
-{#    <link rel="modulepreload" href="https://sebkay.com/build/assets/app-8d89d13e.js">#}
-{#    <link rel="stylesheet" href="https://sebkay.com/build/assets/app-164f6dde.css">#}
-{#    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>#}
-{#    <script type="text/javascript" async=""#}
-{#            src="https://www.googletagmanager.com/gtag/js?id=G-KJSS1DK4GH&amp;l=dataLayer&amp;cx=c"></script>#}
-{#    <script type="text/javascript" async=""#}
-{#            src="https://www.gstatic.com/recaptcha/releases/pCoGBhjs9s8EhFOHJFe8cqis/recaptcha__en.js"#}
-{#            crossorigin="anonymous"#}
-{#            integrity="sha384-ER8TR/9ygDDx6eY4PVNpeuj19NsI16UfPHQbL+Y1qWVn5fYv9C/Ki3MmObCWDrbd"></script>#}
-{#    <script type="module" src="https://sebkay.com/build/assets/app-7bd53f54.js"></script>#}
-{#    <script type="module" src="https://sebkay.com/build/assets/app-8d89d13e.js"></script>#}
-{#</head>#}
 
 <body>
 <div class="wrap">
 
     {% include 'components/header.html' %}
 
-    <script>
-        window.recaptchaSiteKey = "6Lf1dBAcAAAAAKvLKqjx_-vitdVgOvEviQgGLhXe";
-    </script>
-    <script defer=""
-            src="https://www.google.com/recaptcha/api.js?render=6Lf1dBAcAAAAAKvLKqjx_-vitdVgOvEviQgGLhXe"></script>
-    <section class="page">
-        <div class="wysiwyg">
-            <h1>
-                Связь со мной
-            </h1>
-            <p class="txt-large">
-                Если Вы хотите узнать что-нибудь об одном из проектов или хотите предложить офер,
-                пожалуйста, заполните форму ниже. Я отвечу Вам, как только увижу Ваше сообщение.
-            </p>
-        </div>
-        <div class="mt-large">
-            <form id="contact-form" class="form" action="" method="post"
-                  data-recaptcha-form="contact">
-                <div class="form__row">
-                    <div class="form__field">
-                        <label for="name" class="form__label">
-                            Имя <span class="form__required">*</span>
-                        </label>
-                        <input id="name" name="name" type="text" required="">
-                    </div>
-                    <div class="form__field">
-                        <label for="email" class="form__label">
-                            Email <span class="form__required">*</span>
-                        </label>
-                        <input id="email" name="email" type="email" required="">
-                    </div>
+    {#    <script>#}
+    {#        window.recaptchaSiteKey = "6Lf1dBAcAAAAAKvLKqjx_-vitdVgOvEviQgGLhXe";#}
+    {#    </script>#}
+    {#    <script defer=""#}
+    {#            src="https://www.google.com/recaptcha/api.js?render=6Lf1dBAcAAAAAKvLKqjx_-vitdVgOvEviQgGLhXe"></script>#}
+    {#    <section class="page">#}
+    <div class="wysiwyg">
+        <h1>
+            Связь со мной
+        </h1>
+        <p class="txt-large">
+            Если Вы хотите узнать что-нибудь об одном из проектов или хотите предложить офер,
+            пожалуйста, заполните форму ниже. Я отвечу Вам, как только увижу Ваше сообщение.
+        </p>
+    </div>
+    <div class="mt-large">
+        <form id="contact-form" class="form" action="" method="post"
+              data-recaptcha-form="contact">
+            <div class="form__row">
+                <div class="form__field">
+                    <label for="name" class="form__label">
+                        Имя <span class="form__required">*</span>
+                    </label>
+                    <input id="name" name="name" type="text" required="">
                 </div>
-                <div class="form__row">
-                    <div class="form__field">
-                        <label for="subject" class="form__label">
-                            Тема <span class="form__required">*</span>
-                        </label>
-                        <input id="subject" name="subject" type="text" required="">
-                    </div>
+                <div class="form__field">
+                    <label for="email" class="form__label">
+                        Email <span class="form__required">*</span>
+                    </label>
+                    <input id="email" name="email" type="email" required="">
                 </div>
-                <div class="form__row">
-                    <div class="form__field">
-                        <label for="message" class="form__label">
-                            Сообщение <span class="form__required">*</span>
-                        </label>
-                        <textarea id="message" name="message" required=""></textarea>
-                    </div>
+            </div>
+            <div class="form__row">
+                <div class="form__field">
+                    <label for="subject" class="form__label">
+                        Тема <span class="form__required">*</span>
+                    </label>
+                    <input id="subject" name="subject" type="text" required="">
                 </div>
-                <div class="form__row">
-                    <div class="form__field">
-                        <div class="hidden">
-                            <input name="subject_2" type="text">
-                        </div>
-                        {# TODO change this button #}
-                        <button class="btn">
-                            Отправить сообщение
-                        </button>
-                    </div>
+            </div>
+            <div class="form__row">
+                <div class="form__field">
+                    <label for="message" class="form__label">
+                        Сообщение <span class="form__required">*</span>
+                    </label>
+                    <textarea id="message" name="message" required=""></textarea>
                 </div>
-                <input type="hidden" name="_token" value="iFT5iVgCjGMdvmHxgdQf6g0RRGSaaDvqXGDGnpc1">
-            </form>
-        </div>
+            </div>
+            <div class="form__row">
+                <div class="form__field">
+                    <div class="hidden">
+                        <input name="subject_2" type="text">
+                    </div>
+                    <button class="btn">
+                        Отправить сообщение
+                    </button>
+                </div>
+            </div>
+            {#            <input type="hidden" name="_token" value="iFT5iVgCjGMdvmHxgdQf6g0RRGSaaDvqXGDGnpc1">#}
+        </form>
+    </div>
     </section>
 
     {% include 'components/footer.html' %}

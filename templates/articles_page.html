@@ -32,7 +32,7 @@
                 <ul class="link-list">
                     {% for tag in tags %}
                         <li class="link-list__item ">
-                            <a class="tag" href="{% url 'index-page' %}"
+                            <a class="tag" href="/articles/{{ tag.name }}"
                                style="border-color: #2db416; color: #38c420;">
                                 {{ tag }}
                             </a>
@@ -92,19 +92,4 @@
     {% include 'components/footer.html' %}
 
 </div>
-
-{#<script defer="" src="https://www.googletagmanager.com/gtag/js?id=UA-31577987-1"></script>#}
-{#<script>#}
-{#    window.dataLayer = window.dataLayer || [];#}
-{##}
-{#    function gtag() {#}
-{#        dataLayer.push(arguments);#}
-{#    }#}
-{##}
-{#    gtag('js', new Date());#}
-{##}
-{#    gtag('config', 'UA-31577987-1');#}
-{#</script>#}
-
-
 </body>
