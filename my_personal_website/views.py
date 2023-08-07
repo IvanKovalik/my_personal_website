@@ -64,3 +64,13 @@ def get_articles(request, tag):
         'tags': tags,
     }
     return render(request, 'article_by_tag_page.html', context=context)
+
+
+def get_some_article(request, id, tag):
+    tags = Tag.objects.all()
+    article = Article.objects.filter(id=id)
+    context = {
+        'article': article,
+        'tags': tags,
+    }
+    return render(request, 'article_by_tag_page.html', context=context)

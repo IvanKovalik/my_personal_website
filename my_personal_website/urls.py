@@ -28,7 +28,7 @@ urlpatterns = [
 
     # path('articles/<str:tag>', ListOfArticlesView.as_view(), name='articles-by-tag-page'),
     path('articles/<str:tag>/', get_articles, name='articles-python-page'),
-    # path('articles/numba/', ArticlesByTagView.as_view(), name='articles-python-page'),
-    # path('articles/drf/', ArticlesByTagView.as_view(), name='articles-python-page'),
+
+    path('articles/<str:tag>/<str:article_name>/', get_some_article, name='some_article_name')
 
 ]
