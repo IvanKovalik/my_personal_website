@@ -1,7 +1,6 @@
 from .models import Article, Project, WorkProject
 from django.contrib import admin
 
-# admin.site.register(Tag)
 admin.site.register(Project)
 admin.site.register(WorkProject)
 

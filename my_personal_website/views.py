@@ -46,4 +46,21 @@ class ContactPageView(TemplateView):
 
 
 class ArticlesByTagView(TemplateView):
-    pass
+    template_name = 'article_by_tag_page.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        print(context)
+        context['tags'] = Tag.objects.all()
+        context['articles'] = Article.objects.filter(tags=context['tag'])
+        return context
+
+
+def get_articles(request, tag):
+    tags = Tag.objects.all()
+    articles = Article.objects.filter(tags=tag)
+    context = {
+        'articles': articles,
+        'tags': tags,
+    }
+    return render(request, 'article_by_tag_page.html', context=context)
