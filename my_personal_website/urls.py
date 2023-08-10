@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from .views import *
+from .forms import ContactForm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,9 +27,8 @@ urlpatterns = [
     path('articles/', ArticlesPageView.as_view(), name='articles-page'),
     path('contact/', ContactPageView.as_view(), name='contact-page'),
 
-    # path('articles/<str:tag>', ListOfArticlesView.as_view(), name='articles-by-tag-page'),
     path('articles/<str:tag>/', get_articles, name='articles-python-page'),
 
-    path('articles/<str:tag>/<str:article_name>/', get_some_article, name='some_article_name')
+    path('articles/<str:tag>/<int:article_id>/', get_some_article, name='some_article_name')
 
 ]

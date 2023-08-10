@@ -18,7 +18,7 @@
                 <ul class="link-list">
                     {% for tag in tags %}
                         <li class="link-list__item ">
-                            <a class="tag" href="/articles/{{ tag.name | lower }}"
+                            <a class="tag" href="{{ tag.id }}"
                                style="border-color: #2db416; color: #38c420;">
                                 {{ tag }}
                             </a>
@@ -39,15 +39,16 @@
                 </div>
 
                 {% for article in articles %}
+
                     <article class="post-preview">
                         <h3 class="post-preview__title">
-                            <a href="https://sebkay.com/articles/{{ article.tag }}/{{ article.name }}/">
+                            <a href="{{ article.id }}">
                                 {{ article.name }}
                             </a>
                         </h3>
                         <p class="post-preview__meta">
                             {% for tag in article.tags.all %}
-                                <a class="tag" href="https://sebkay.com/articles/{{ article.tag.name }}/"
+                                <a class="tag"
                                    style="border-color: #38c420; color: #32d218;">
                                     {{ tag }}
                                 </a>
@@ -63,11 +64,12 @@
                             </p>
                         </div>
                         <p class="post-preview__action">
-                            <a href="articles/{{ article.tag.id }}/{{ article.name }}">
+                            <a href="">
                                 Читать статью.. →
                             </a>
                         </p>
                     </article>
+
                 {% endfor %}
 
 
