@@ -68,9 +68,9 @@ def get_articles(request, tag):
 
 def get_some_article(request, article_id, tag):
     tags = Tag.objects.all()
-    article = Article.objects.filter(id=article_id)
+    article = Article.objects.filter(tags=tag, id=article_id)
     context = {
-        'article': article,
         'tags': tags,
+        'article': article,
     }
-    return render(request, 'article_by_tag_page.html', context=context)
+    return render(request, 'some_project_page.html', context=context)

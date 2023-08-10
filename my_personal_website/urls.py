@@ -19,6 +19,7 @@ from django.urls import path, re_path
 from .views import *
 from .forms import ContactForm
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexPageView.as_view(), name='index-page'),
@@ -29,6 +30,6 @@ urlpatterns = [
 
     path('articles/<str:tag>/', get_articles, name='articles-python-page'),
 
-    path('articles/<str:tag>/<int:article_id>/', get_some_article, name='some_article_name')
+    path('articles/<int:tag>/<int:article_id>/', get_some_article, name='some_article_page')
 
 ]

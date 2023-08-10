@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+{% include 'components/head.html' %}
+
+<body>
+<div class="wrap">
+
+    {% include 'components/header.html' %}
+
+    <section>
+        <h1 class="mb-tiny">
+            {{ article.name }}
+        </h1>
+        <p class="txt-large">
+            {{ article.text }}
+        </p>
+    </section>
+</div>
+
+{% include 'components/footer.html' %}
+
+</body>
