@@ -43,3 +43,13 @@ class WorkProject(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=300, blank=False)
+    email = models.EmailField(max_length=300, blank=False)
+    subject = models.CharField(max_length=500, blank=False)
+    message = models.TextField(max_length=3000, blank=False)
+
+    def __str__(self):
+        return self.name

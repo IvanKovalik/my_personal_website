@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'django.contrib.sites',
     'taggit',
+    'crispy_forms',
+    'crispy_bootstrap5',
 
     'my_personal_website',
 ]
@@ -122,3 +124,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 TAGGIT_CASE_INSENSITIVE = True
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'

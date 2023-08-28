@@ -34,14 +34,14 @@
 
             <article class="post-preview">
                 <h3 class="post-preview__title">
-                    <a href="https://sebkay.com/articles/converting-a-laravel-inertia-app-from-mix-to-vite">
+                    <a href="/articles/by-id/{{ article.id }}">
                         {{ article.name }}
                     </a>
                 </h3>
                 <p class="post-preview__meta">
 
                     {% for tag in article.tags.all %}
-                        <a class="tag" href="https://sebkay.com/articles/category/laravel"
+                        <a class="tag" href="/articles/{{ tag.slug }}"
                            style="border-color: #2db416; color: #38c420;">
                             {{ tag }}
                         </a>
@@ -50,7 +50,7 @@
                     <br>
                     {{ article.date_created }}
                     /
-                    4 minute read
+                    4 minutes read
                 </p>
                 <div class="post-preview__excerpt">
                     <p>
@@ -58,7 +58,7 @@
                     </p>
                 </div>
                 <p class="post-preview__action">
-                    <a href="https://sebkay.com/articles/converting-a-laravel-inertia-app-from-mix-to-vite">
+                    <a href="/articles/by-id/{{ article.id }}">
                         Читать статью →
                     </a>
                 </p>
@@ -68,19 +68,4 @@
     </section>
     {% include 'components/footer.html' %}
 </div>
-
-<script defer="" src="https://www.googletagmanager.com/gtag/js?id=UA-31577987-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'UA-31577987-1');
-</script>
-
-
 </body>

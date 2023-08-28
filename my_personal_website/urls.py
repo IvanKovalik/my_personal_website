@@ -1,35 +1,19 @@
-"""
-URL configuration for my_personal_website project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path, re_path
 from .views import *
-from .forms import ContactForm
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('', IndexPageView.as_view(), name='index-page'),
     path('work/', WorkPageView.as_view(), name='work-page'),
     path('projects/', ProjectsPageView.as_view(), name='projects-page'),
     path('articles/', ArticlesPageView.as_view(), name='articles-page'),
     path('contact/', ContactPageView.as_view(), name='contact-page'),
 
-    path('articles/<str:tag>/', get_articles, name='articles-python-page'),
+    path('articles/<slug:tag>/', ArticlesByTagPageView.as_view(), name='articles-python-page'),
 
-    path('articles/<int:tag>/<int:article_id>/', get_some_article, name='some_article_page')
+    path('articles/by-id/<int:article_id>/', SomeArticleView.as_view(), name='some_article_page'),
 
+    path('contact/success/', SuccessContactView.as_view(), name='success-page'),
 ]
