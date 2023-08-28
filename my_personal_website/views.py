@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, ListView, CreateView
 from taggit.models import Tag
@@ -50,6 +51,18 @@ class ContactPageView(CreateView):
         return render(request, self.template_name, {'form': form})
 
     def post(self, request, *args, **kwargs):
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form_data = form
+            sender_name = form_data.cleaned_data['name']
+            sender_email = form_data.cleaned_data['email']
+            sender_subject = form_data.cleaned_data['subject']
+            sender_message = form_data.cleaned_data['message']
+            recipient = ['ikovalik34@gmail.com']
+
+            send_mail(subject=sender_subject, message=sender_message, from_email=sender_email, recipient_list=recipient)
+
         return redirect('success-page')
 
 
