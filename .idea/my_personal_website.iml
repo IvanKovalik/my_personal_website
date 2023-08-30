@@ -27,6 +27,7 @@
     <orderEntry type="library" name="vendor-fdabe717" level="application" />
     <orderEntry type="library" name="app-8d89d13e" level="application" />
     <orderEntry type="library" name="app-164f6dde" level="application" />
+    <orderEntry type="library" name="app-164f6dde" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

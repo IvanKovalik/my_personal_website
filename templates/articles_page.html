@@ -56,11 +56,11 @@
                             <br>
                             {{ article.date_created }}
                             /
-                            4 minute read
+                            {{ article.text|wordcount }}
                         </p>
                         <div class="post-preview__excerpt">
                             <p>
-                                {{ article.text | truncatewords:'35' }}
+                                {{ article.text|truncatewords:'35' }}
                             </p>
                         </div>
                         <p class="post-preview__action">
