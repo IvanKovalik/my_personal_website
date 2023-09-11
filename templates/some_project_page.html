@@ -7,16 +7,39 @@
 
     {% include 'components/header.html' %}
 
-    <section>
-        <h1 class="mb-tiny">
-            {{ article.name }}
-        </h1>
-        <p class="txt-large">
-            {{ article.text }}
+    <div>
+        <div style="align-content: center">
+            <figure class="project-preview__media">
+                <img src="{{ project.preview_image.url }}" style=" width: 100%;"
+                     alt="Screenshot of Project">
+            </figure>
+        </div>
+
+        <h3 style="margin-top: 3rem;">
+            {{ project.name }}
+        </h3>
+        {#        <p>#}
+        {#            Статья написана {{ article.date_created|timesince }} назад.#}
+        {#        </p>#}
+        <ul class="link-list" style="margin-top: 1.25rem;">
+            {% for tag in project.tags.all %}
+                <li class="link-list__item ">
+                    <a class="tag"
+                       style="border-color: #2db416; color: #38c420;">
+                        {{ tag }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <hr style="margin-top: 1.5rem; margin-bottom: 2rem;">
+        <p>
+            {{ project.text|linebreaksbr }}
         </p>
-    </section>
+
+    </div>
+
+    {% include 'components/footer.html' %}
+
 </div>
-
-{% include 'components/footer.html' %}
-
 </body>

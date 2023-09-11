@@ -17,45 +17,58 @@
     </div>
     <section class="page-wide">
 
+        {% for work_project in work_projects %}
 
-        <div class="project-preview">
-            <figure class="project-preview__media">
-                <a href="https://sebkay.com/work/cazz-photography">
-                    <img src="https://res.cloudinary.com/sebkay/image/upload/v1643826481/cazzphotography.co.uk_botmqy.webp"
-                         srcset="https://res.cloudinary.com/sebkay/image/upload/v1643826481/cazzphotography.co.uk_botmqy.webp 1x, https://res.cloudinary.com/sebkay/image/upload/v1643826480/cazzphotography.co.uk_2x_wihgkl.webp 2x"
-                         alt="Screenshot of Cazz Photography">
-                </a>
-            </figure>
-            <div class="project-preview__content">
-                <h2 class="project-preview__title">
-                    <a href="https://sebkay.com/work/cazz-photography">
-                        Cazz Photography
+            <div class="project-preview">
+                <figure class="project-preview__media">
+                    <a href="/work/by-id/{{ work_project.id }}">
+                        <img src="{{ work_project.preview_image.url }}"
+                             alt="Screenshot of Work Project">
                     </a>
-                </h2>
-                <p class="project-preview__desc">
-                    Portfolio showcasing the different aspects of Cazz as a photographer.
-                </p>
-                <div class="project-preview__meta">
-                    <ul class="list list--regular">
-                        <li class="list__item">
-                            Logo Design
-                        </li>
-                        <li class="list__item">
-                            Web Design
-                        </li>
-                        <li class="list__item">
-                            Static Site Development (Jekyll)
-                        </li>
-                    </ul>
-                </div>
-                <div class="project-preview__action">
-                    <a href="https://sebkay.com/work/cazz-photography" class="btn">
-                        View Details
-                    </a>
+                </figure>
+                <div class="project-preview__content">
+                    <h2 class="project-preview__title">
+                        <a href="/work/by-id/{{ work_project.id }}">
+                            {{ work_project.name }}
+                        </a>
+                    </h2>
+                    <p class="project-preview__desc">
+                        {{ work_project.description }}
+                    </p>
+                    <div class="project-preview__meta">
+                        <ul class="list list--regular">
+                            <li class="list__item">
+                                {{ work_project.what_have_been_done_by_me1|linebreaksbr }}
+                            </li>
+                            {% if work_project.what_have_been_done_by_me2 %}
+                                <li class="list__item">
+                                    {{ work_project.what_have_been_done_by_me2|linebreaksbr }}
+                                </li>
+                            {% endif %}
+                            {% if work_project.what_have_been_done_by_me3 %}
+                                <li class="list__item">
+                                    {{ work_project.what_have_been_done_by_me3|linebreaksbr }}
+                                </li>
+                            {% endif %}
+                            {% if work_project.what_have_been_done_by_me4 %}
+                                <li class="list__item">
+                                    {{ work_project.what_have_been_done_by_me4|linebreaksbr }}
+                                </li>
+                            {% endif %}
+
+
+                        </ul>
+                    </div>
+
+                    <div class="project-preview__action">
+                        <a href="/work/by-id/{{ work_project.id }}" class="btn">
+                            Смотреть проект
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
 
+        {% endfor %}
 
     </section>
 

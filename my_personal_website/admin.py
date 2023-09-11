@@ -1,9 +1,11 @@
-from .models import Article, Project, WorkProject, Contact
+from .models import Article, Project, WorkProject
 from django.contrib import admin
+
+from taggit.models import TaggedItem
 
 admin.site.register(Project)
 admin.site.register(WorkProject)
-admin.site.register(Contact)
+admin.site.register(TaggedItem)
 
 
 @admin.register(Article)

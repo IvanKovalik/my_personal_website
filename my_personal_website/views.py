@@ -1,11 +1,8 @@
-from django.contrib.auth.decorators import login_required
-from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, ListView, CreateView
 from taggit.models import Tag
 
-from .models import Article, Project
-from .forms import ContactForm
+from .models import Article, Project, WorkProject
 
 
 class IndexPageView(TemplateView):
@@ -21,6 +18,15 @@ class IndexPageView(TemplateView):
 class WorkPageView(TemplateView):
     template_name = 'work_page.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['work_projects'] = WorkProject.objects.all().order_by('-date_created')
+        return context
+
+
+class WorkProjectView(CreateView):
+    pass
+
 
 class ProjectsPageView(TemplateView):
     template_name = 'projects_page.html'
@@ -29,8 +35,16 @@ class ProjectsPageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['tags'] = Tag.objects.all()
         context['articles'] = Article.objects.all()
-        context['projects'] = Project.objects.all()
+        context['projects'] = Project.objects.all().order_by('-time_created')
         return context
+
+
+class SomeProjectView(CreateView):
+    template_name = 'some_project_page.html'
+
+    def get(self, request, *args, **kwargs):
+        project = Project.objects.get(id=kwargs['project_id'])
+        return render(request, self.template_name, {'project': project})
 
 
 class ArticlesPageView(TemplateView):
@@ -38,7 +52,8 @@ class ArticlesPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['tags'] = Tag.objects.all()
+        # context['tags'] = Tag.objects.all()
+        context['tags'] = Tag.objects.filter(taggit_taggeditem_items=5)
         context['articles'] = Article.objects.all()
         return context
 
@@ -47,23 +62,7 @@ class ContactPageView(CreateView):
     template_name = 'contact_page.html'
 
     def get(self, request, *args, **kwargs):
-        form = ContactForm()
-        return render(request, self.template_name, {'form': form})
-
-    def post(self, request, *args, **kwargs):
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            form_data = form
-            sender_name = form_data.cleaned_data['name']
-            sender_email = form_data.cleaned_data['email']
-            sender_subject = form_data.cleaned_data['subject']
-            sender_message = form_data.cleaned_data['message']
-            recipient = ['ikovalik34@gmail.com']
-
-            send_mail(subject=sender_subject, message=sender_message, from_email=sender_email, recipient_list=recipient)
-
-        return redirect('success-page')
+        return render(request, self.template_name, {})
 
 
 class ArticlesByTagView(TemplateView):
@@ -104,7 +103,3 @@ class SomeArticleView(CreateView):
             'article': article,
         }
         return render(request, self.template_name, context=context)
-
-
-class SuccessContactView(TemplateView):
-    template_name = 'contact_complete.html'

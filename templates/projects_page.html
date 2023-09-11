@@ -21,14 +21,14 @@
 
             <div class="project-preview">
                 <figure class="project-preview__media">
-                    <a href="/projects/{{ project.name }}">
-                        <img src="https://res.cloud52/v1676549597/app.harlist.io_p5fgqc.png"
-                             alt="Screenshot of Harlist">
+                    <a href="/projects/by-id/{{ project.id }}">
+                        <img src="{{ project.preview_image.url }}" style="width: 100%;"
+                             alt="Screenshot of Project">
                     </a>
                 </figure>
                 <div class="project-preview__content">
                     <h2 class="project-preview__title">
-                        <a href="/projects/{{ project.name }}">
+                        <a href="/projects/by-id/{{ project.id }}">
                             {{ project.name }}
                         </a>
                     </h2>
@@ -42,7 +42,7 @@
                         {{ project.description }}
                     </p>
                     <div class="project-preview__action">
-                        <a href="/projects/{{ project.name }}" class="btn">
+                        <a href="/projects/by-id/{{ project.id }}" class="btn">
                             Смотреть проект
                         </a>
                     </div>

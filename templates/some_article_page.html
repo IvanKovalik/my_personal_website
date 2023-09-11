@@ -8,15 +8,15 @@
     {% include 'components/header.html' %}
 
     <div>
-        <h2>
+        <h3>
             {{ article.name }}
-        </h2>
-{#        <p>#}
-{#            Статья написана {{ article.date_created|timesince }} назад.#}
-{#        </p>#}
-        <hr>
+        </h3>
+        {#        <p>#}
+        {#            Статья написана {{ article.date_created|timesince }} назад.#}
+        {#        </p>#}
+        <hr style="margin-top: 1.5rem; margin-bottom: 2rem;">
         <p>
-            {{ article.text|linebreaks }}
+            {{ article.text|linebreaksbr }}
         </p>
 
 

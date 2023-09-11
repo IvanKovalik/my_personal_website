@@ -3,16 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-        {#        <link href="https://sebkay.com/img/favicon-32x32.png" rel="icon" sizes="32x32">#}
-        {#        <link href=https://sebkay.com/img/favicon-192x192.png" rel="icon" sizes="192x192">#}
-        {#        <link href="https://sebkay.com/img/favicon-192x192.png" rel="apple-touch-icon-precomposed">#}
-        {#        <meta content="/img/favicon-297x297.png" name="msapplication-TileImage">#}
+        <link href="/media/logo-color.svg" rel="icon" sizes="32x32">
         <title>
             Ковалик Иван
             | Backend development on Python
         </title>
-        <link rel="preload" as="style" href="https://sebkay.com/build/assets/app-164f6dde.css">
-        <link rel="stylesheet" href="https://sebkay.com/build/assets/app-164f6dde.css">
-{#        <link rel="stylesheet" type="text/css" href="{% static 'css/app-164f6dde.css' %}">#}
+        {% include 'components/css-links.html' %}
     </head>
 {% endblock %}

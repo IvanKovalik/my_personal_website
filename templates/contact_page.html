@@ -3,65 +3,116 @@
 
 {% include 'components/head.html' %}
 
-{% load crispy_forms_field %}
-
 <body>
 <div class="wrap">
 
     {% include 'components/header.html' %}
 
     <div class="wysiwyg">
-        <h1>
+        <h3>
             Связь со мной
-        </h1>
+        </h3>
+
         <p class="txt-large">
-            Если Вы хотите узнать что-нибудь об одном из проектов или хотите предложить офер,
-            пожалуйста, заполните форму ниже или напишите мне на электронную почту ikovalik34@gmail.com. Я отвечу Вам, как только увижу Ваше сообщение.
+            Если Вы хотите связаться со мной, напишите, пожалуйста на почту
+            <a href=mailto:ikovalik34@gmail.com" style="font-weight: bold; font-size: 20px; color: forestgreen;">ikovalik34@gmail.com</a>
         </p>
+        <p>
+            Мой ID в <strong style="color:#1c8dfa;">Telegram</strong> - <strong>@EternityItself</strong> если хотите,
+            можете написать там.
+        </p>
+        <p>
+            Очень рекомендую посмотреть портфолио на <strong><a href="https://github.com/IvanKovalik"
+                                                                style="color:forestgreen;">GitHub</a></strong>.
+            Там есть интересные проекты.
+        </p>
+
+
     </div>
 
     <section>
-        <div class="mt-large">
-            <form class="form" action="" method="post">
-                {% csrf_token %}
-                <div class="form__row">
-                    <div class="form__field">
-                        <label for="name" class="form__label">
-                            Имя <span class="form__required">*</span>
-                        </label>
-                        {{ form.name|as_crispy_field }}
-                    </div>
-                    <div class="form__field">
-                        <label for="email" class="form__label">
-                            Email <span class="form__required">*</span>
-                        </label>
-                        {{ form.email|as_crispy_field }}
-                    </div>
-                </div>
-                <div class="form__row">
-                    <div class="form__field">
-                        <label for="subject" class="form__label">
-                            Тема <span class="form__required">*</span>
-                        </label>
-                        {{ form.subject|as_crispy_field }}
-                    </div>
-                </div>
-                <div class="form__row">
-                    <div class="form__field">
-                        <label for="message" class="form__label">
-                            Сообщение <span class="form__required">*</span>
-                        </label>
-                        {{ form.message|as_crispy_field }}
-                    </div>
-                </div>
-                <div class="form__row">
-                    <div class="form__field">
-                        <button class="btn" type="submit">
-                            Отправить сообщение
-                        </button>
-                    </div>
-                </div>
-            </form>
+        <div>
+            <h4 style="margin-top: 3rem;">
+                Опыт работы
+            </h4>
+            <hr style="margin-top: 1rem; margin-bottom: 1rem;">
+
+            <div>
+                <p>
+                <p style="font-weight: bold; font-size: 18px;">Фриланс - разработчик Python и Django</p>
+                <p style="font-weight: lighter; font-size: 18px;">Июль 2022 - Ноябрь 2022</p>
+                <p style="font-size: 16px;">
+                    - Делал то <br>
+                    - Делал это <br>
+                    - Делал все <br>
+                </p>
+                </p>
+            </div>
+
+            <div>
+                <p>
+                <p style="font-weight: bold; margin-top: 1.5rem; font-size: 18px;">Компания ДОТВОРК - младший
+                    разработчик Python</p>
+                <p style="font-weight: lighter; font-size: 18px;">Ноябрь 2022 - Март 2023</p>
+                <p style="font-size: 16px;">
+                    - Делал то <br>
+                    - Делал это <br>
+                    - Делал все <br>
+                </p>
+                </p>
+            </div>
+
+
+            <div>
+                <p>
+                <p style="font-weight: bold; margin-top: 1.5rem; font-size: 18px;">Фриланс - разработчик Python и
+                    Django</p>
+                <p style="font-weight: lighter; font-size: 18px;">Апрель 2023 - Август 2023</p>
+                <p style="font-size: 16px;">
+                    - Делал то <br>
+                    - Делал это <br>
+                    - Делал все <br>
+                </p>
+                </p>
+            </div>
+
+            <div>
+                <p>
+                <h4 style="margin-top: 3rem;">
+                    ОБРАЗОВАНИЕ
+                </h4>
+                <hr style="margin-top: 1rem; margin-bottom: 1rem;">
+                <p style="font-weight: bold; font-size: 18px;">Сибирский государственный Институт Связи ( СИБГУТИ )</p>
+                <p style="font-weight: lighter; font-size: 18px;">Сентябрь 2021 - Май 2022</p>
+                <p style="font-size: 16px;">
+                    - Имею неоконченное высшее образование по специальности ИВТ ( Информатика и Вычислительная Техника )<br>
+                    - Отчислился в середине 2-го курса по собственному желанию, не понравилось
+                    огромное
+                    количество математики. <br>
+
+                </p>
+
+                </p>
+            </div>
+
+            <div>
+                <p>
+                <h4 style="margin-top: 3rem;">
+                    НАВЫКИ
+                </h4>
+                <hr style="margin-top: 1rem; margin-bottom: 1rem;">
+
+                <p style="font-size: 16px;">
+                    Уверенное владение:
+                    <strong style="color:forestgreen;">Python, Django, DRF, PostgreSQL, Redis </strong> <br>
+                    Имею опыт работы с: <strong style="color:cornflowerblue;">RabbitMQ, docker</strong> <br>
+                    Имею базовые навыки работы с: <strong style="color:darkorange;">HTML, CSS, Bootstrap5</strong> <br>
+
+                </p>
+
+                </p>
+            </div>
+
         </div>
     </section>
 
