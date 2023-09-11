@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, ListView, CreateView
 from taggit.models import Tag
+from django.contrib.contenttypes.models import ContentType
 
 from .models import Article, Project, WorkProject
 
@@ -52,8 +53,8 @@ class ArticlesPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context['tags'] = Tag.objects.all()
-        context['tags'] = Tag.objects.filter(taggit_taggeditem_items=5)
+        context['tags'] = Tag.objects.filter(
+            taggit_taggeditem_items__content_type=ContentType.objects.get_for_model(Article))
         context['articles'] = Article.objects.all()
         return context
 
@@ -65,22 +66,11 @@ class ContactPageView(CreateView):
         return render(request, self.template_name, {})
 
 
-class ArticlesByTagView(TemplateView):
-    template_name = 'article_by_tag_page.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        print(context)
-        context['tags'] = Tag.objects.all()
-        context['articles'] = Article.objects.filter(tags=context['tag'])
-        return context
-
-
 class ArticlesByTagPageView(CreateView):
     template_name = 'article_by_tag_page.html'
 
     def get(self, request, *args, **kwargs):
-        tags = Tag.objects.all()
+        tags = Tag.objects.filter(taggit_taggeditem_items__content_type=ContentType.objects.get_for_model(Article))
         tag_id = Tag.objects.get(slug__exact=kwargs['tag'])
 
         articles = Article.objects.filter(tags=tag_id)

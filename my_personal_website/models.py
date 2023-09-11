@@ -7,6 +7,7 @@ class Article(models.Model):
     name = models.CharField(max_length=1000, unique=True, blank=False)
     text = models.TextField(max_length=15000, blank=False)
     date_created = models.DateTimeField(auto_now=True)
+    minute_read = models.PositiveIntegerField()
 
     tags = TaggableManager()
 

@@ -7,13 +7,15 @@
 
     {% include 'components/header.html' %}
 
-    <div>
-        <div style="align-content: center">
-            <figure class="project-preview__media">
-                <img src="{{ project.preview_image.url }}" style=" width: 100%;"
-                     alt="Screenshot of Project">
-            </figure>
-        </div>
+    <div style="align-items: center">
+        <section class="page-wide" style="align-items: center">
+            <div>
+                <figure class="project-preview__media">
+                    <img src="{{ project.preview_image.url }}" style=" width: 100%;"
+                         alt="Screenshot of Project">
+                </figure>
+            </div>
+        </section>
 
         <h3 style="margin-top: 3rem;">
             {{ project.name }}
@@ -43,3 +45,12 @@
 
 </div>
 </body>
+
+<style>
+    @media screen and (min-width: 671px) {
+        .project-preview__media {
+            width: 85%;
+            margin-left: 5rem;
+        }
+    }
+</style>
