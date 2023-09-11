@@ -9,25 +9,26 @@
 
     <section class="mb-huge">
         <div class="box wysiwyg">
-            <h1>
-                Приветствую, меня зовут Иван.
-            </h1>
-            <p class="txt-large">
-                Я Python developer из Москвы. В настоящий момент работаю фрилансером на платформах () и ().
-                В свободное время занимаюсь разработкой собственных проектов, увлекаюсь шахматами.
-                Разрабатываю на Python, Django, DRF, люблю работать с библиотекой Selenium.
+            <h2>
+                Здравствуйте, меня зовут Иван.
+            </h2>
+            <p class="txt-large" style="font-size: 19px">
+                Я Python разработчик из Москвы. <br>
+                В свободное время занимаюсь разработкой собственных проектов, увлекаюсь шахматами. <br>
+                Основными технологиями являются Python, Django, DRF, а также разные сторонние
+                библиотеки и технологии, подробнее о которых вы можете узнать в разделе CV.
             </p>
             <p>
-                I'm on <a href="" target="_blank">GitHub</a>,
-                <a href="" target="_blank">Twitter</a>
+                Мой аккаунт на <a href="https://github.com/IvanKovalik" target="_blank"
+                                  style="font-weight: bold; color:black;">GitHub</a>,
             </p>
         </div>
     </section>
     <section>
         <div class="mb-large">
-            <h2>
+            <h3>
                 Мои последние статьи:
-            </h2>
+            </h3>
         </div>
 
         {% for article in articles %}
@@ -67,5 +68,12 @@
 
     </section>
     {% include 'components/footer.html' %}
+
+
 </div>
 </body>
+<style>
+    .box {
+        background: rgba(183, 255, 183, 0.28);
+    }
+</style>
